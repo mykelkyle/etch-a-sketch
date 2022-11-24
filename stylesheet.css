@@ -1,0 +1,30 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(16, 5%);
+  grid-auto-rows: 5%;
+  height: 90vh;
+  width: 90vh;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+}
+
+.cell {
+  border: 1px solid black;
+}
+
+.cellDown {
+  background-color: black;
+}
