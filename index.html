@@ -6,9 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheet.css" />
     <script src="script.js" defer></script>
-    <title>Etch-A=Sketch</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    </style>
+    <title>Etch-A-Sketch</title>
   </head>
   <body>
-    <div id="container" class="grid-container"></div>
+    <div class="header">Etch-A-Sketch</div>
+    <div class="full-container">
+      <div class="settings-container">
+        <button>Clear</button>
+        <button>Eraser</button>
+        <button>Black</button>
+        <button>Rainbow</button>
+        <div class="slide-container">
+          <input type="range" min="1" max="100" value="16" class="slider" />
+          Grid Size
+        </div>
+      </div>
+      <div id="grid-container" class="grid-container"></div>
+    </div>
+    <div class="footer">Created by Mykel Murphy</div>
   </body>
 </html>

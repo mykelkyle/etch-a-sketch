@@ -1,13 +1,26 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   min-height: 100vh;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: -20px;
+  font-size: 40px;
+}
+.full-container {
+  margin: 0 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .grid-container {
@@ -16,15 +29,44 @@ body {
   grid-auto-rows: 5%;
   height: 90vh;
   width: 90vh;
-  margin: 0 auto;
   justify-content: center;
   align-content: center;
 }
 
 .cell {
   border: 1px solid black;
+  flex: 1;
 }
 
 .cellDown {
   background-color: black;
+}
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.slide-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  appearance: none;
+  height: 25px;
+  outline: none;
+  margin: 0 auto;
+}
+
+.footer {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 5vh;
+  width: 100%;
+  background-color: darkred;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
