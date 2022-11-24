@@ -1,23 +1,45 @@
-// creates 16x16 grid of divs, appends to container and adds class of "cell"
-
 let drawing = false;
-const container = document.getElementById("grid-container");
 
-for (let i = 0; i < 256; i++) {
-  const cell = document.createElement("div");
-  cell.classList.add("cell");
+// creates grid of divs based on argument, adds event listeners for "drawing" functionality, resets
 
-  cell.addEventListener("mousedown", () => {
-    drawing = true;
-  });
-  cell.addEventListener("mouseup", () => {
-    drawing = false;
-  });
-  cell.addEventListener("mouseover", () => {
-    if (drawing === true) {
-      cell.classList.add("cellDown");
-    }
-  });
+function populateBoard(size) {
+  const container = document.getElementById("grid-container");
+  const cells = container.querySelectorAll("div");
+  const sliderOutput = document.getElementById("slider-output");
 
-  container.appendChild(cell);
+  sliderOutput.innerText = `Grid Size: ${size} x ${size}`;
+
+  cells.forEach((div) => div.remove());
+
+  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+  //
+
+  let amount = size * size;
+
+  for (let i = 0; i < amount; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+
+    cell.addEventListener("mousedown", () => {
+      drawing = true;
+    });
+    container.addEventListener("mouseup", () => {
+      drawing = false;
+    });
+    cell.addEventListener("mouseover", () => {
+      if (drawing === true) {
+        cell.classList.add("cellDown");
+      }
+    });
+
+    container.appendChild(cell);
+  }
+}
+
+populateBoard(16);
+
+function changeSizes(input) {
+  populateBoard(input);
 }

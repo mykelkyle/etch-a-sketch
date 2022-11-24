@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheet.css" />
     <script src="script.js" defer></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap"
-      rel="stylesheet"
-    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+    </style>
     <title>Etch-A-Sketch</title>
   </head>
   <body>
@@ -21,9 +20,17 @@
         <button>Eraser</button>
         <button>Black</button>
         <button>Rainbow</button>
-        <div class="slide-container">
-          <input type="range" min="1" max="100" value="16" class="slider" />
-          Grid Size
+        <div class="slider-container">
+          <input
+            type="range"
+            min="1"
+            max="64"
+            value="16"
+            class="slider"
+            id="slider"
+            onchange="console.log(changeSizes(this.value))"
+          />
+          <div id="slider-output">Grid Size: 16 x 16</div>
         </div>
       </div>
       <div id="grid-container" class="grid-container"></div>
