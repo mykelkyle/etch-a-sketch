@@ -57,6 +57,13 @@ function populateBoard(size) {
   black.onclick = () => {
     eraserVal = false;
   };
+  // toggles grid lines
+  toggleGrid.onclick = () => {
+    let allCells = document.querySelectorAll(".cell");
+    allCells.forEach((div) => {
+      div.classList.toggle("cellGrid");
+    });
+  };
 }
 
 // default grid size
